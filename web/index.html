@@ -1,0 +1,47 @@
+<html ng-app="app">  <!--Ponemos el nombre de nuestro app-->
+    <head>
+        
+        <script language="javascript" type="text/javascript" src="lib/angular/js/angular.js"></script>
+        <script language="javascript" type="text/javascript" src="index.js"></script>
+        
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    
+    <body ng-controller="IndexCtrl">
+        
+        <div>Prueba de Angular</div>
+      <br/>
+        {{minombre}} <!--Con las dobles llaves llamo a mi variable-->
+      <br/><br/>
+    
+    <p>Introduce el nombre de la Entidad Bancaria que quieras:</p>
+    
+    
+    <!--Creo el boton para pasar el dato del nombre al archivo json.jsp -->
+    <input type="text" ng-model="nombre"/> <!--//$scope.nombre-->
+    <button ng-click="buscarEntidades()">Buscar</button>
+        
+    
+<table border="1"> 
+    <tr>
+                <td>idEntidad</td>
+                <td>codigoEntidad</td>
+                <td>nombre</td>
+		<td>cif</td>
+		<td>tipoEntidadBancaria</td>
+    </tr>      
+    <tr ng-repeat="entidadBancaria in entidadesBancarias">
+                <td>{{entidadBancaria.idEntidad}}</td>
+                <td>{{entidadBancaria.codigoEntidad}}</td>
+                <td>{{entidadBancaria.nombre}}</td>   
+		<td>{{entidadBancaria.cif}}</td>
+                <td>{{entidadBancaria.tipoEntidadBancaria}}</td>   
+                <td><button ng-click="verEntidades()">Ver</button></td>
+                <td><button ng-click="borrarEntidades()">Borrar</button></td>
+    </tr>
+</table>
+        
+    </body>
+    
+</html>
