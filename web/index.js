@@ -6,6 +6,7 @@ app.controller('IndexCtrl', function($scope, $http) {
     $scope.minombre = "Antonio";
     //$.scope.nombre=null; // Corrige el problema de mostrar cuando no hay nada NO ES RECOMENDABLE
     
+    
     $http.get("http://localhost:8084/BancoWeb/entidadesBancarias.json.jsp").success(function(result) {
         $scope.entidadesBancarias = result;
     })
@@ -16,5 +17,20 @@ app.controller('IndexCtrl', function($scope, $http) {
         $scope.entidadesBancarias=result;
         })
     }
+        
     
+    $scope.verEntidadBancaria=function(idEntidadBancaria){
+    $http.get("http://localhost:8084/BancoWeb/entidadBancaria.json.jsp?idEntidad="+idEntidadBancaria).success(function(result){
+        $scope.entidadesBancarias=result; 
+//MUESTRO EL RESULTADO DE X VARIABLE QUE SE ENCUENTRE EN EL SCOPE. EN ESTE CASO QUERYSTRING
+        })
+    }
+    
+    
+    $scope.borrarEntidadBancaria=function(idEntidadBancaria){
+    $http.get("http://localhost:8084/BancoWeb/entidadBancariaDelete.json.jsp?idEntidad="+idEntidadBancaria).success(function(/*result*/){
+        //$scope.entidadesBancarias=result;
+        })
+    }
+       
 });
