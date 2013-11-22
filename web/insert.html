@@ -1,0 +1,50 @@
+<!--<script type="text/java">
+<%@page import="BancoWeb.SourcePackages.Negocio.TipoEntidadBancaria"%>
+</script>
+ //no se puede hacer este import. solo se puede haciendo una llamada a ajax
+-->
+<html ng-app="app">
+    <head>
+
+        <script language="javascript" type="text/javascript" src="lib/angular/js/angular.js"></script>
+        <script language="javascript" type="text/javascript" src="read.js"></script>
+
+        <title>Read HTML</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    </head>
+
+    <body ng-controller="InsertCtrl">
+
+        <p>Entidad Bancaria INSERT</p>
+
+        <input type="text" ng-model="entidadBancaria.idEntidad" value="idEntidad"/>
+        <input type="text" ng-model="entidadBancaria.codigoEntidad" value="codigoEntidad"/>
+        <input type="text" ng-model="entidadBancaria.nombre" value="nombre"/>
+        <input type="text" ng-model="entidadBancaria.cif" value="cif"/>
+
+        <select ng-model="entidadBancaria.tipoEntidadBancaria">
+            <option selected>--- Elige un tipo Entidad ---</option>
+            <option value="Caja">Caja</option>
+            <option value="Banco">Banco</option>
+        </select>
+
+        <button ng-click="insertarEntidadBancaria()">Enviar</button>
+
+        <p>
+            {{entidadBancaria}}
+        </p>
+
+        <table>
+            <tr>
+                <td>{{entidadBancaria.idEntidad}}</td>
+                <td>{{entidadBancaria.codigoEntidad}}</td>
+                <td>{{entidadBancaria.nombre}}</td>   
+                <td>{{entidadBancaria.cif}}</td>
+                <td>{{entidadBancaria.tipoEntidadBancaria}}</td>   
+            </tr>
+        </table>
+
+        <a href="http://localhost:8084/Prueba_angular/index.html?">Volver</a>
+    </body>
+</html>
