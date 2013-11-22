@@ -20,10 +20,11 @@ app.controller('IndexCtrl', function($scope, $http) {
         
     
     $scope.verEntidadBancaria=function(idEntidadBancaria){
-    $http.get("http://localhost:8084/BancoWeb/entidadBancaria.json.jsp?idEntidad="+idEntidadBancaria).success(function(result){
-        $scope.entidadesBancarias=result; 
-//MUESTRO EL RESULTADO DE X VARIABLE QUE SE ENCUENTRE EN EL SCOPE. EN ESTE CASO QUERYSTRING
-        })
+// Esta linea me guarda el json en txt LOL !!! window.open("http://localhost:8084/BancoWeb/entidadBancaria.json.jsp?idEntidad="+idEntidadBancaria).success(function(result){
+       window.location("http://localhost:8084/Prueba_angular/read.html?idEntidad="+idEntidadBancaria);//.success(function(result){
+       //window.location.href="ref"+variable;
+         //  $scope.entidadesBancarias=result; 
+    //})
     }
     
     

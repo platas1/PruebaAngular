@@ -1,14 +1,38 @@
-<html>
+<html ng-app="app">
     <head>
-        <title>Read HTML</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
+              
         <script language="javascript" type="text/javascript" src="lib/angular/js/angular.js"></script>
         <script language="javascript" type="text/javascript" src="read.js"></script>
         
+          <title>Read HTML</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
     </head>
     <body ng-controller="ReadCtrl">
-        <div>TODO write content</div>
-        {{queryString}}
+        <p>Entidad Bancaria READ</p>
+        
+        
+        <table border="1"> 
+    <tr>
+                <td>idEntidad</td>
+                <td>codigoEntidad</td>
+                <td>nombre</td>
+		<td>cif</td>
+		<td>tipoEntidadBancaria</td>
+    </tr>      
+    <tr>
+                <td>{{queryString.idEntidad}}</td>
+                <td>{{queryString.codigoEntidad}}</td>
+                <td>{{queryString.nombre}}</td>   
+		<td>{{queryString.cif}}</td>
+                <td>{{queryString.tipoEntidadBancaria}}</td>   
+    </tr>
+</table>
+          
+        <p>
+            {{queryString}}
+        </p>
+        
+        <a href="http://localhost:8084/Prueba_angular/index.html?">Volver</a>
     </body>
 </html>

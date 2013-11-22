@@ -30,6 +30,7 @@
                 <td>nombre</td>
 		<td>cif</td>
 		<td>tipoEntidadBancaria</td>
+                <td colspan="2">Acciones</td>
     </tr>      
     <tr ng-repeat="entidadBancaria in entidadesBancarias">
                 <td>{{entidadBancaria.idEntidad}}</td>
@@ -37,7 +38,7 @@
                 <td>{{entidadBancaria.nombre}}</td>   
 		<td>{{entidadBancaria.cif}}</td>
                 <td>{{entidadBancaria.tipoEntidadBancaria}}</td>   
-                <td><a href="http://localhost:8084/Prueba_Angular/read.html?idEntidad=1"+entidadBancaria.idEntidad>Ver</a></td>
+                <td><button ng-click="verEntidadBancaria(entidadBancaria.idEntidad)">Ver</button></td>
                 <td><button ng-click="borrarEntidadBancaria(entidadBancaria.idEntidad)">Borrar</button></td>
     </tr>
 </table>
